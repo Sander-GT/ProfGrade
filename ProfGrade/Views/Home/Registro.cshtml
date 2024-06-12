@@ -1,0 +1,78 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@if (ViewBag.alerta != null)
+{
+    <div class="alert alert-danger">@ViewBag.alerta</div>
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title> </title>
+    <link rel="stylesheet" href="/css/registro.css">
+
+
+</head>
+<body>
+
+
+
+ 
+    <form method="post" action="Registro">
+        <!-- Formulario Registro -->
+
+
+        <div>
+            <label for="rut">Rut:</label>
+            <input type="text" name="Rut" id="rut" required />
+        </div>
+        <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="Nombre" id="nombre" required />
+        </div>
+        <div>
+            <label for="correo">Correo:</label>
+            <input type="email" name="Correo" id="correo" required />
+        </div>
+        <div>
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" name="Telefono" id="telefono" required />
+        </div>
+        <div>
+            <label for="rol">Rol:</label>
+            <select name="Rol" id="rol" required>
+                <option value="         ">          </option>
+                <option value="Administrador">Administrador</option>
+                <option value="Director">Director</option>
+                <option value="Profesor">Profesor</option>
+            </select>
+        </div>
+        <div>
+            <label for="clave">Clave:</label>
+            <input type="password" name="Clave" id="clave" required />
+        </div><br>
+        <div>
+            <input type="submit" value="Registrarse" />
+        </div><br>
+        <div>
+            <a href="@Url.Action("Index", "Home")" class="divRegis">Iniciar Sesión</a>
+        </div>
+    </form>
+
+    <br>
+    <br>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+﻿@using System.Data;
+
+
+
+@model DataTable
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal</title>
+    <link rel="stylesheet" href="/css/Personal.css">
+
+</head>
+<body>
+    <div id="encabezado">
+        <div id="cargo-nombre">
+            <h3>Administración de Personal</h3>
+        </div>
+
+    </div>
+
+    <div id="cuerpo">
+        <br>
+        <!--formulario de buscar Usuario poe rut-->
+        <form id="personal-form" action="/Home/BuscarUsuario" method="post">
+            <label for="rut">Rut:</label>
+            <input type="text" id="rut" name="rut" placeholder="@ViewBag.Rut" required>
+            <input type="submit" value="Buscar">
+        </form>
+        <br>
+        <!--formulario de modificar Usuarios-->
+        <form id="modificar-form" action="/Home/ModificarUsuario" method="post">
+            <label for="nombre">Nombre: </label>
+            <input type="text" id="nombre" name="Nombre" value="@ViewBag.Nombre" required>
+
+            <label for="correo">Correo:</label>
+            <input type="email" id="correo" name="Correo" value="@ViewBag.Correo" required>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="Telefono" value="@ViewBag.Telefono" required>
+
+            <label for="rol">Rol:   </label>
+            <input type="text" id="rol" name="Rol" value="@ViewBag.Rol" required>
+
+            <label for="clave">Clave:</label>
+            <input type="text" id="clave" name="Clave" value="@ViewBag.Clave" required>
+            <br><br>
+            <input type="hidden" id="rut" name="Rut" value="@ViewBag.Rut" readonly>
+            <input type="submit" value="Modificar">
+        </form>
+
+
+        <!--formulario de eliminar usuario por rut-->
+        <br><br>
+        <form id="personal-form" action="/Home/Eliminar" method="post">
+            <label for="rutEliminar">Rut a Eliminar:</label>
+            <input type="text" id="rutEliminar" name="RutEliminar" value="@ViewBag.Rut">
+            <input type="submit" value="Eliminar">
+        </form>
+
+
+        <br>
+        <div>
+            <a href="@Url.Action("Registro", "Home")">Registrarse</a>
+        </div>
+        <br>
+
+
+        <div id="encabezado">
+            <div id="cargo-nombre">
+                <h3>Personal Registrado</h3>
+            </div>
+
+        </div>
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Rut</th>
+                <th>Correo</th>
+                <th>Teléfono</th>
+                <th>Rol</th>
+                <th>Clave</th>
+            </tr>
+            @if (ViewBag.Usuarios != null)
+            {
+                foreach (var usuario in ViewBag.Usuarios)
+                {
+                    <tr>
+                        <td>@usuario.Nombre</td>
+                        <td>@usuario.Rut</td>
+                        <td>@usuario.Correo</td>
+                        <td>@usuario.Telefono</td>
+                        <td>@usuario.Rol</td>
+                        <td>@usuario.Clave</td>
+                    </tr>
+                }
+            }
+        </table>
+
+        <p>@ViewBag.Message</p>
+    </div>
+
+
+    <br>
+
+
+
+    <button href="Administrador" class="divRegis"></button>
+    <a href="/Home/Menu_Administrador" class="btn btn-primary">Volver a Administrador</a>
+
+
+
+</body>
+</html>

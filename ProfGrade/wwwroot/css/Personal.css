@@ -1,0 +1,140 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('../img/Index.jpeg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    flex-direction: column;
+    padding: 20px;
+    overflow-y: auto; /* Permitir desplazamiento vertical */
+}
+
+#encabezado {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#cargo-nombre h3 {
+    font-size: 2em;
+    color: #fff;
+}
+
+#cuerpo {
+    width: 100%;
+    max-width: 1000px; /* Aumentar el ancho máximo del recuadro */
+    background: rgba(0, 0, 0, 0.8); /* Hacer el fondo un poco más oscuro para mejor visibilidad */
+    padding: 30px; /* Aumentar el padding para más espacio interno */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    margin-bottom: 20px; /* Espacio inferior para separación */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 100%; /* Hacer que el formulario ocupe todo el ancho del recuadro */
+    max-width: 600px; /* Limitar el ancho máximo del formulario */
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1em;
+    width: 100%;
+}
+
+input[type="submit"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #162938;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%;
+}
+
+    input[type="submit"]:hover {
+        background: #fff;
+        color: #162938;
+    }
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    color: #fff;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background: #162938;
+}
+
+tr:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+    a:hover {
+        color: #ccc;
+    }
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #162938;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-align: center;
+    margin-top: 10px;
+}
+
+    .btn:hover {
+        background: #fff;
+        color: #162938;
+    }

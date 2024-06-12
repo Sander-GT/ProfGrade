@@ -1,0 +1,79 @@
+﻿@model System.Data.DataTable
+@{
+    ViewBag.Title = "Gestión de Cursos";
+
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>@ViewBag.Title</h2>
+
+        <!-- Formulario para crear un nuevo curso -->
+        <h3>Crear Curso</h3>
+        @using (Html.BeginForm("CrearCurso", "Curso", FormMethod.Post))
+        {
+            <div class="form-group">
+                <label for="nombreCurso">Nombre del Curso</label>
+                <input type="text" class="form-control" id="nombreCurso" name="nombreCurso" required />
+            </div>
+            <button type="submit" class="btn btn-primary">Crear</button>
+        }
+
+        <hr />
+
+        <!-- Tabla para mostrar y gestionar los cursos -->
+        <h3>Lista de Cursos</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre del Curso</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (System.Data.DataRow row in Model.Rows)
+                {
+                    <tr>
+                        <td>@row["ID_CURSO"]</td>
+                        <td>
+                            <!-- Formulario para editar un curso -->
+                            @using (Html.BeginForm("EditCurso", "Curso", FormMethod.Post))
+                            {
+                                @Html.Hidden("id", row["ID_CURSO"])
+                                <input type="text" class="form-control" name="nombreCurso" value="@row["NOMBRE_CURSO"]" required />
+                                <button type="submit" class="btn btn-warning">Guardar</button>
+                            }
+                        </td>
+                        <td>
+                            <!-- Formulario para eliminar un curso -->
+                            @using (Html.BeginForm("EliminarCurso", "Curso", FormMethod.Post))
+                            {
+                                @Html.Hidden("id", row["ID_CURSO"])
+                                <button type="submit" class="btn btn-danger">Eliminar</button>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        @if (ViewBag.alerta != null)
+        {
+            <div class="alert alert-info">@ViewBag.alerta</div>
+        }
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

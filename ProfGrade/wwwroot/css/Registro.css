@@ -1,0 +1,54 @@
+﻿body {
+    font-family: Arial, sans-serif; /* Fuente de texto para el cuerpo */
+    background-image: url('/img/Vista_Registro.jpeg'); /* Imagen de fondo */
+    background-size: cover; /* Ajusta la imagen para cubrir la pantalla */
+    background-repeat: no-repeat; /* No se repite la imagen */
+    background-position: center; /* Centra la imagen de fondo en el cuerpo */
+    background-attachment: fixed; /* La imagen de fondo está fija */
+    text-align: center; /* Alinea el contenido al centro del cuerpo */
+    padding: 30px;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+form {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    text-align: left; /* Alineación del texto en el centro */
+    border-radius: 50px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra con desenfoque */
+    padding: 50px; /* Relleno interno de 50 píxeles */
+    margin: 0 auto; /* Margen automático para centrar el formulario */
+    text-align: left; /* Alineación del texto en el centro */
+    width: 500px;
+    height: 560px;
+    position: absolute;
+    bottom: 100px;
+    left: 1100px;
+}
+
+div {
+    margin: 1px; /* Espacio entre elementos del formulario */
+}
+
+label {
+    color: #fff;
+    display: block; /* Coloca las etiquetas en una nueva línea */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+    width: 100%; /* Los campos de entrada ocupan todo el ancho del formulario */
+    padding: 5px; /* Espacio interior en los campos de entrada */
+}
+
+.divRegis {
+    background-color: #ff6a00; /* Fondo azul más oscuro */
+    color: #fff; /* Color azul para el texto */
+    padding: 15px;
+}

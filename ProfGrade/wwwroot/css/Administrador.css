@@ -1,0 +1,65 @@
+﻿/* Estilos para la vista "Administración" */
+
+/* Estilos para el cuerpo de la página */
+body {
+    font-family: Arial; /* Fuente de texto para el cuerpo */
+    background-image: url('/img/Vista_Administrador.jpeg'); /* Imagen de fondo*/
+    background-size: cover; /* Ajusta la imagen para cubrir la pantalla */
+    background-repeat: no-repeat; /* No se repite la imagen */
+    background-attachment: fixed; /* La imagen de fondo está fija en su posición */
+    padding: 30px; /* Relleno interno de 20 píxeles alrededor del contenido */
+    align-items: center;
+    overflow: hidden;
+}
+
+.divFondo {
+    position: absolute;
+    bottom: 180px;
+    left: 750px;
+    width: 320px;
+    height: 320px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+}
+
+
+/* Estilos para los encabezados h2 */
+h2 {
+    text-align: center; /* Alineación del texto al centro */
+    color: rgb(182, 255, 0); /* Color azul para el texto */
+    box-shadow: 0 0 10px rgb(182, 255, 0); /* Sombra con desenfoque */
+    padding: 33px;
+}
+
+/* Estilos para los botones de administración */
+.admin-button {
+
+    text-align: center; /* Alineación del texto al centro */
+    margin: 11px 0; /* Margen superior e inferior de 20 píxeles, sin margen izquierdo y derecho */
+}
+
+    /* Estilos para enlaces dentro de los botones de administración */
+    .admin-button a {
+        background-color: #ff6a00; /* Fondo naranjo para el botón */
+        display: inline-block; /* Los enlaces se muestran en línea en el botón */
+        text-decoration: none; /* Sin subrayado en los enlaces */
+        color: #fff; /* Texto blanco */
+        padding: 10px 20px; /* Relleno interno de 10 píxeles en vertical y 20 píxeles en horizontal */
+        border-radius: 5px; /* Bordes redondeados */
+        margin: 10px; /* Margen exterior de 10 píxeles en todos los lados del botón */
+        transition: background-color 0.3s ease-in-out; /* Transición al pasar el mouse por encima */
+
+    }
+
+        /* Estilos para el botón al pasar el mouse por encima */
+        .admin-button a:hover {
+            background-color: lightseagreen; /* Cambia el color del fondo al pasar el mouse por encima del botón */
+        }
