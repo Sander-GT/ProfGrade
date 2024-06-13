@@ -28,6 +28,7 @@ namespace ProfGrade.Controllers
 
 
 
+
         // Método para manejar todas las operaciones en una sola vista
         [HttpGet]
         public IActionResult Curso()
@@ -39,8 +40,8 @@ namespace ProfGrade.Controllers
                 using (SqlCommand cmd = new SqlCommand(selectQuery, con))
                 {
                     con.Open();
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    da.Fill(dtCursos);
+                    SqlDataAdapter datos = new SqlDataAdapter(cmd);
+                    datos.Fill(dtCursos);
                 }
             }
 
@@ -70,7 +71,7 @@ namespace ProfGrade.Controllers
 
         // Método para editar curso
         [HttpPost]
-        public IActionResult EditCurso(int id, string nombreCurso)
+        public IActionResult EditarCurso(int id, string nombreCurso)
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {

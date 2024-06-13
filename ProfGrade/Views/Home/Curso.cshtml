@@ -46,7 +46,7 @@
                         <td>@row["ID_CURSO"]</td>
                         <td>
                             <!-- Formulario para editar un curso -->
-                            @using (Html.BeginForm("EditCurso", "Curso", FormMethod.Post))
+                            @using (Html.BeginForm("EditarCurso", "Curso", FormMethod.Post))
                             {
                                 @Html.Hidden("id", row["ID_CURSO"])
                                 <input type="text" class="form-control" name="nombreCurso" value="@row["NOMBRE_CURSO"]" required />
