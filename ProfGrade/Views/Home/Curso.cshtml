@@ -18,7 +18,7 @@
 
         <!-- Formulario para crear un nuevo curso -->
         <h3>Crear Curso</h3>
-        @using (Html.BeginForm("CrearCurso", "Curso", FormMethod.Post))
+        @using (Html.BeginForm("CrearCurso", "Home", FormMethod.Post))
         {
             <div class="form-group">
                 <label for="nombreCurso">Nombre del Curso</label>
@@ -46,7 +46,7 @@
                         <td>@row["ID_CURSO"]</td>
                         <td>
                             <!-- Formulario para editar un curso -->
-                            @using (Html.BeginForm("EditarCurso", "Curso", FormMethod.Post))
+                            @using (Html.BeginForm("EditarCurso", "Home", FormMethod.Post))
                             {
                                 @Html.Hidden("id", row["ID_CURSO"])
                                 <input type="text" class="form-control" name="nombreCurso" value="@row["NOMBRE_CURSO"]" required />
@@ -55,7 +55,7 @@
                         </td>
                         <td>
                             <!-- Formulario para eliminar un curso -->
-                            @using (Html.BeginForm("EliminarCurso", "Curso", FormMethod.Post))
+                            @using (Html.BeginForm("EliminarCurso", "Home", FormMethod.Post))
                             {
                                 @Html.Hidden("id", row["ID_CURSO"])
                                 <button type="submit" class="btn btn-danger">Eliminar</button>

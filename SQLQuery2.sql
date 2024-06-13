@@ -1,0 +1,34 @@
+﻿select * from Curso
+
+INSERT INTO Curso (NOMBRE_CURSO) VALUES ('1°A');
+
+DROP TABLE curso;
+
+ALTER TABLE curso DROP COLUMN ID_CURSO;
+
+
+-- Eliminar la clave foránea que depende de ID_CURSO
+ALTER TABLE ASIGNATURA DROP CONSTRAINT FK__ASIGNATUR__ID_CU__4222D4EF;
+
+-- Eliminar la clave primaria que depende de ID_CURSO
+ALTER TABLE Curso DROP CONSTRAINT PK__CURSO__9B4AE79883ED18C4;
+
+
+-- Eliminar la columna ID_CURSO
+ALTER TABLE Curso DROP COLUMN ID_CURSO;
+
+-- Agregar la columna ID_CURSO como IDENTITY
+ALTER TABLE Curso ADD ID_CURSO INT IDENTITY(1,1) PRIMARY KEY;
+
+
+INSERT INTO Curso (NOMBRE_CURSO) VALUES ('1°A');
+
+
+
+-- Crear nuevamente la clave foránea
+ALTER TABLE ASIGNATURA ADD CONSTRAINT FK_ASIGNATURA_CURSO FOREIGN KEY (ID_CURSO) REFERENCES Curso(ID_CURSO);
+
+
+DROP TABLE Curso;
+
+
